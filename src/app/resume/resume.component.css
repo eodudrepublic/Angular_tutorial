@@ -1,0 +1,328 @@
+/* Resume Container */
+.resume-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Headers */
+.resume-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 15px;
+}
+
+.resume-container h2 {
+  font-size: 1.8rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #95a5a6;
+  padding-bottom: 10px;
+}
+
+.resume-container h4 {
+  font-size: 1.3rem;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.resume-container h6 {
+  font-size: 1.1rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+.resume-container small {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+/* Section */
+.section {
+  margin-bottom: 40px;
+}
+
+/* Tables */
+.info-table,
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info-table td,
+.data-table td,
+.data-table th {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  vertical-align: middle;
+}
+
+.data-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  text-align: left;
+  color: #495057;
+}
+
+.info-table .label {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  width: 150px;
+  color: #495057;
+}
+
+/* Input Fields */
+.input-field {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+.input-field.full-width {
+  width: 100%;
+}
+
+.input-field.inline {
+  display: inline-block;
+  width: auto;
+  min-width: 300px;
+}
+
+.input-field.project-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.input-field.company-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Textarea */
+.textarea-field {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.textarea-field:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+/* Photo Placeholder */
+.photo-placeholder {
+  width: 150px;
+  height: 150px;
+  background-color: #ecf0f1;
+  border: 2px dashed #bdc3c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f8c8d;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* Buttons */
+.add-button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.add-button:hover {
+  background-color: #2980b9;
+}
+
+.add-button:active {
+  transform: translateY(1px);
+}
+
+/* Project Items */
+.project-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.project-detail {
+  margin-bottom: 15px;
+}
+
+.project-detail strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.project-detail blockquote {
+  margin: 0;
+  padding: 10px 15px;
+  background: white;
+  border-left: 3px solid #3498db;
+  border-radius: 4px;
+}
+
+/* Project Meta */
+.project-meta {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+
+.project-meta li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-meta li strong {
+  min-width: 100px;
+  color: #2c3e50;
+}
+
+/* Project List */
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-list li {
+  margin-bottom: 20px;
+}
+
+/* Signature Section */
+.signature-section {
+  margin-top: 60px;
+  padding-top: 20px;
+}
+
+.signature-section hr {
+  border: none;
+  border-top: 2px solid #e0e0e0;
+  margin-bottom: 30px;
+}
+
+.signature-note {
+  font-size: 14px;
+  color: #7f8c8d;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.signature-info {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.signature-info p {
+  margin: 5px 0;
+}
+
+.input-field.signature-date,
+.input-field.signature-name {
+  display: inline-block;
+  width: auto;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 20px 10px;
+  }
+
+  .resume-container h1 {
+    font-size: 2rem;
+  }
+
+  .resume-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .info-table .label {
+    width: 120px;
+  }
+
+  .photo-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .input-field.inline {
+    min-width: 200px;
+  }
+
+  .data-table {
+    font-size: 13px;
+  }
+
+  .data-table td,
+  .data-table th {
+    padding: 8px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .add-button {
+    display: none;
+  }
+
+  .input-field,
+  .textarea-field {
+    border: none;
+    padding: 4px;
+  }
+
+  .resume-container {
+    padding: 0;
+  }
+
+  .project-item {
+    page-break-inside: avoid;
+  }
+}

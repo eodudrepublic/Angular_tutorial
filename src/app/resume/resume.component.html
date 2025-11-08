@@ -1,0 +1,687 @@
+<div class="resume-container">
+  <h1>이력서</h1>
+
+  <!-- 개인 정보 섹션 -->
+  <section class="section">
+    <h2>개인 정보</h2>
+
+    <!-- 기본정보 -->
+    <h6>기본정보</h6>
+    <table class="info-table">
+      <tbody>
+        <tr>
+          <td class="label">Photo</td>
+          <td colspan="3">
+            <!-- TODO: 프로필 사진 -->
+            <div class="photo-placeholder">프로필 사진</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Name</td>
+          <td colspan="3">
+            <input 
+              type="text" 
+              [(ngModel)]="personalInfo().name" 
+              placeholder="이름을 입력하세요 (예: 홍길동)"
+              class="input-field"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">- Chinese</td>
+          <td colspan="3">
+            <input 
+              type="text" 
+              [(ngModel)]="personalInfo().nameInChinese" 
+              placeholder="한자 이름을 입력하세요"
+              class="input-field"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">- English</td>
+          <td colspan="3">
+            <input 
+              type="text" 
+              [(ngModel)]="personalInfo().nameInEnglish" 
+              placeholder="영문 이름을 입력하세요 (예: Rhio Kim)"
+              class="input-field"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Age</td>
+          <td colspan="3">
+            <input 
+              type="number" 
+              [(ngModel)]="personalInfo().age" 
+              placeholder="나이를 입력하세요"
+              class="input-field"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Birth Day</td>
+          <td colspan="3">
+            <input 
+              type="text" 
+              [(ngModel)]="personalInfo().birthDay" 
+              placeholder="생년월일을 입력하세요 (예: YYYY.MM.DD)"
+              class="input-field"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Email</td>
+          <td colspan="3">
+            <input 
+              type="email" 
+              [(ngModel)]="personalInfo().email" 
+              placeholder="이메일을 입력하세요 (예: my.email@gmail.com)"
+              class="input-field"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Mobile</td>
+          <td colspan="3">
+            <input 
+              type="tel" 
+              [(ngModel)]="personalInfo().mobile" 
+              placeholder="연락처를 입력하세요 (예: 010-xxxx-xxxx)"
+              class="input-field"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 신상정보 -->
+    <h6>신상정보</h6>
+    <table class="info-table">
+      <tbody>
+        <tr>
+          <td class="label">Address</td>
+          <td>
+            <input 
+              type="text" 
+              [(ngModel)]="personalInfo().address" 
+              placeholder="주소를 입력하세요"
+              class="input-field full-width"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Mobile</td>
+          <td>
+            <input 
+              type="tel" 
+              [(ngModel)]="personalInfo().mobile" 
+              placeholder="연락처를 입력하세요"
+              class="input-field full-width"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Married</td>
+          <td>
+            <input 
+              type="text" 
+              [(ngModel)]="personalInfo().married" 
+              placeholder="기혼 or 미혼"
+              class="input-field full-width"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Family</td>
+          <td>
+            <input 
+              type="text" 
+              [(ngModel)]="personalInfo().family" 
+              placeholder="가족 구성을 입력하세요 (예: 1남 2녀)"
+              class="input-field full-width"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Blood type</td>
+          <td>
+            <input 
+              type="text" 
+              [(ngModel)]="personalInfo().bloodType" 
+              placeholder="혈액형을 입력하세요 (예: RH+ A)"
+              class="input-field full-width"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Religion</td>
+          <td>
+            <input 
+              type="text" 
+              [(ngModel)]="personalInfo().religion" 
+              placeholder="종교를 입력하세요"
+              class="input-field full-width"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 학력정보 -->
+    <h6>학력정보</h6>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>School Name</th>
+          <th>Major</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Status</th>
+          <th>최종학력</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (edu of education(); track $index) {
+          <tr>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="edu.level" 
+                placeholder="University, High School 등"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="edu.schoolName" 
+                placeholder="학교명을 입력하세요"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="edu.major" 
+                placeholder="전공을 입력하세요"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="edu.startDate" 
+                placeholder="YYYY.MM"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="edu.endDate" 
+                placeholder="YYYY.MM"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="edu.status" 
+                placeholder="graduated, enrolled 등"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="checkbox" 
+                [(ngModel)]="edu.isFinal"
+              />
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <button (click)="addEducation()" class="add-button">학력 추가</button>
+  </section>
+
+  <!-- 직장이력 섹션 -->
+  <section class="section">
+    <h2>직장이력</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Company</th>
+          <th>Part > Team</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (work of workHistory(); track $index) {
+          <tr>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="work.period" 
+                placeholder="YYYY.MM - YYYY.MM"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="work.company" 
+                placeholder="회사명을 입력하세요"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="work.partAndTeam" 
+                placeholder="부서 > 팀을 입력하세요"
+                class="input-field"
+              />
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <button (click)="addWorkHistory()" class="add-button">직장이력 추가</button>
+  </section>
+
+  <!-- 오픈소스 프로젝트 섹션 -->
+  <section class="section">
+    <h2>오픈소스 프로젝트 <small>(기간을 입력하세요)</small></h2>
+    @for (project of openSourceProjects(); track $index) {
+      <div class="project-item">
+        <h4>
+          <input 
+            type="text" 
+            [(ngModel)]="project.name" 
+            placeholder="프로젝트 공식 명칭을 입력하세요"
+            class="input-field project-name"
+          />
+        </h4>
+        
+        <div class="project-detail">
+          <strong>소개</strong>
+          <blockquote>
+            <textarea 
+              [(ngModel)]="project.description" 
+              placeholder="프로젝트에 대한 간략한 소개를 입력하세요"
+              class="textarea-field"
+              rows="3"
+            ></textarea>
+          </blockquote>
+        </div>
+
+        <div class="project-detail">
+          <strong>주요기능</strong>
+          <blockquote>
+            <textarea 
+              placeholder="주요 기능을 줄바꿈으로 구분하여 입력하세요"
+              class="textarea-field"
+              rows="3"
+            ></textarea>
+          </blockquote>
+        </div>
+
+        <div class="project-detail">
+          <strong>사용기술</strong>
+          <blockquote>
+            <textarea 
+              placeholder="사용된 기술을 줄바꿈으로 구분하여 입력하세요"
+              class="textarea-field"
+              rows="3"
+            ></textarea>
+          </blockquote>
+        </div>
+
+        <ul class="project-meta">
+          <li>
+            <strong>개발기간:</strong>
+            <input 
+              type="text" 
+              [(ngModel)]="project.developmentPeriod" 
+              placeholder="개발 기간을 입력하세요"
+              class="input-field inline"
+            />
+          </li>
+          <li>
+            <strong>공식 사이트:</strong>
+            <input 
+              type="url" 
+              [(ngModel)]="project.officialSite" 
+              placeholder="https://example.com"
+              class="input-field inline"
+            />
+          </li>
+          <li>
+            <strong>소스 저장소:</strong>
+            <input 
+              type="url" 
+              [(ngModel)]="project.repository" 
+              placeholder="https://github.com/user/project"
+              class="input-field inline"
+            />
+          </li>
+        </ul>
+      </div>
+    }
+    <button (click)="addOpenSourceProject()" class="add-button">오픈소스 프로젝트 추가</button>
+  </section>
+
+  <!-- 참여한 프로젝트 이력 섹션 -->
+  <section class="section">
+    <h2>참여한 프로젝트 이력</h2>
+    @for (project of participatedProjects(); track $index) {
+      <div class="project-item">
+        <h4>
+          <input 
+            type="text" 
+            [(ngModel)]="project.company" 
+            placeholder="회사명을 입력하세요"
+            class="input-field company-name"
+          />
+        </h4>
+
+        <ul class="project-list">
+          <li>
+            <input 
+              type="text" 
+              [(ngModel)]="project.projectName" 
+              placeholder="프로젝트명을 입력하세요"
+              class="input-field project-name"
+            />
+            
+            <div class="project-detail">
+              <strong>소개</strong>
+              <blockquote>
+                <textarea 
+                  [(ngModel)]="project.description" 
+                  placeholder="프로젝트에 대한 간략한 소개를 입력하세요"
+                  class="textarea-field"
+                  rows="2"
+                ></textarea>
+              </blockquote>
+            </div>
+
+            <div class="project-detail">
+              <strong>역할</strong>
+              <blockquote>
+                <textarea 
+                  placeholder="자기가 참여한 프로젝트에서 했던 역할에 대해서 기술하세요"
+                  class="textarea-field"
+                  rows="2"
+                ></textarea>
+              </blockquote>
+            </div>
+
+            <div class="project-detail">
+              <strong>사용기술</strong>
+              <blockquote>
+                <textarea 
+                  placeholder="사용된 기술 스택을 입력하세요 (예: Backbone.js, jQuery, Node.js 등)"
+                  class="textarea-field"
+                  rows="2"
+                ></textarea>
+              </blockquote>
+            </div>
+
+            <ul class="project-meta">
+              <li>
+                <strong>개발기간:</strong>
+                <input 
+                  type="text" 
+                  [(ngModel)]="project.period" 
+                  placeholder="개발 기간을 입력하세요 (예: 12개월)"
+                  class="input-field inline"
+                />
+              </li>
+              <li>
+                <strong>공식 사이트:</strong>
+                <input 
+                  type="url" 
+                  [(ngModel)]="project.officialSite" 
+                  placeholder="https://project.com"
+                  class="input-field inline"
+                />
+              </li>
+              <li>
+                <strong>소스 저장소:</strong>
+                <input 
+                  type="url" 
+                  [(ngModel)]="project.repository" 
+                  placeholder="https://github.com/company/project"
+                  class="input-field inline"
+                />
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    }
+    <button (click)="addParticipatedProject()" class="add-button">참여 프로젝트 추가</button>
+  </section>
+
+  <!-- 대외 활동 내역 섹션 -->
+  <section class="section">
+    <h2>대외 활동 내역</h2>
+
+    <h4>커뮤니티</h4>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>날짜</th>
+          <th>주제</th>
+          <th>관련 참고 자료</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (community of activities().communities; track $index) {
+          <tr>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="community.date" 
+                placeholder="YYYY.MM"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="community.title" 
+                placeholder="주제를 입력하세요"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="url" 
+                [(ngModel)]="community.reference" 
+                placeholder="http://slidesha.re/xxxxxx"
+                class="input-field"
+              />
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <button (click)="addCommunity()" class="add-button">커뮤니티 활동 추가</button>
+
+    <h4>세미나</h4>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>행사 / 모임</th>
+          <th>주제</th>
+          <th>규모</th>
+          <th>관련 참고 자료</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (seminar of activities().seminars; track $index) {
+          <tr>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="seminar.event" 
+                placeholder="행사명을 입력하세요"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="seminar.subject" 
+                placeholder="주제를 입력하세요"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="seminar.scale" 
+                placeholder="참석 인원"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="url" 
+                [(ngModel)]="seminar.reference" 
+                placeholder="http://bit.ly/xxxxxx"
+                class="input-field"
+              />
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <button (click)="addSeminar()" class="add-button">세미나 활동 추가</button>
+
+    <h4>컨퍼런스, 강연</h4>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>행사 / 모임</th>
+          <th>주제</th>
+          <th>규모</th>
+          <th>관련 참고 자료</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (conference of activities().conferences; track $index) {
+          <tr>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="conference.event" 
+                placeholder="컨퍼런스명을 입력하세요"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="conference.title" 
+                placeholder="주제를 입력하세요"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="text" 
+                [(ngModel)]="conference.scale" 
+                placeholder="참석 인원"
+                class="input-field"
+              />
+            </td>
+            <td>
+              <input 
+                type="url" 
+                [(ngModel)]="conference.reference" 
+                placeholder="http://bit.ly/xxxxxx"
+                class="input-field"
+              />
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <button (click)="addConference()" class="add-button">컨퍼런스 활동 추가</button>
+  </section>
+
+  <!-- 소셜 섹션 -->
+  <section class="section">
+    <h2>소셜</h2>
+    <table class="info-table">
+      <tbody>
+        <tr>
+          <td class="label">Github</td>
+          <td>
+            <input 
+              type="url" 
+              [(ngModel)]="social().github" 
+              placeholder="https://github.com/{account}"
+              class="input-field full-width"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Twitter</td>
+          <td>
+            <input 
+              type="url" 
+              [(ngModel)]="social().twitter" 
+              placeholder="https://twitter.com/{account}"
+              class="input-field full-width"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Facebook</td>
+          <td>
+            <input 
+              type="url" 
+              [(ngModel)]="social().facebook" 
+              placeholder="https://facebook.com/{account}"
+              class="input-field full-width"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 서명 섹션 -->
+  <section class="section signature-section">
+    <hr />
+    <p class="signature-note">
+      위의 사실은 GNU 정신에 의거하여 사실임을 증명하며, 만약 사실이 아닐 경우 MIT 라이센스로 공개해도 무방합니다.
+    </p>
+    
+    <div class="signature-info">
+      <p>
+        <input 
+          type="text" 
+          [(ngModel)]="signature().date" 
+          placeholder="YYYY년 MM월 DD일"
+          class="input-field signature-date"
+        />
+      </p>
+      <p>
+        {{ '{' }}<input 
+          type="text" 
+          [(ngModel)]="signature().name" 
+          placeholder="홍길동"
+          class="input-field signature-name"
+        />{{ '}' }}
+      </p>
+    </div>
+  </section>
+</div>
